@@ -1,9 +1,10 @@
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-
 <% if current_user.present? %>
+  <%= link_to "Sign out", sign_out_path %>
   <div>
     <p>Name: <%= current_user.name %></p>
     <p>Name: <%= current_user.email %></p>
     <p>Name: <%= image_tag current_user.image %></p>
   </div>
+<% else %>
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
 <% end %>
